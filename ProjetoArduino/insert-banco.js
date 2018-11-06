@@ -59,7 +59,7 @@ class LeitorArduino {
                 throw new Error("Nenhum Arduino está conectado ou porta USB sem comunicação ou mais de um Arduino conectado");
             }
 
-            console.log("Arduino conectado na COM 5", entradasSeriaisArduino[0].comName);
+            console.log("Arduino conectado na COM ", entradasSeriaisArduino[0].comName);
              
             return  entradasSeriaisArduino[0].comName;
 
@@ -113,7 +113,7 @@ function registrarLeitura(temperatura, umidade) {
 	console.log(`umidade: ${umidade}`);
 	
 	request = new Request(`
-	INSERT into leitura (temperatura, umidade, hora) 
+	INSERT into leitura (temperatura, umidade, momento) 
 	values (@temperatura, @umidade, CURRENT_TIMESTAMP);
 	`, function(err, linhas) {  
 		 if (err) {  
