@@ -17,20 +17,19 @@ router.get('/', (req, res, next) => {
 router.post('/', (req, res, next) => {
     var nome = req.body.nome;
     var usuario = req.body.usuario;
+    var senha = req.body.senha;
 
-    Database.query(`INSERT INTO modelo_user (nome, usuario) VALUES ('${nome}', '${usuario}')`).then((results) => {
-        res.json({
+    Database.query(`INSERT INTO modelo_user (nome, usuario, senha) VALUES ('${nome}', '${usuario}', '${senha}');`).then((results) => {
+        res.status(200).json({
             mensagem: 'Concluído',
             results: results
         });
     }).catch((error) => {
-        res.json({
+        res.status(401).json({
             mensagem: 'Deu erro',
             error: error
-        })
+        });
     });
-
-    res.json(req.body);
 });
 
 module.exports = router;

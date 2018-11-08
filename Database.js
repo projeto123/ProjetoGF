@@ -8,6 +8,7 @@ module.exports = {
             return null;
         } else {
             var sql = require('mssql');
+            sql.close();
         	return new Promise((resolve, reject) => {
                 console.log('Establishing connection to Database...')
                 sql.connect(config).then(pool => {
