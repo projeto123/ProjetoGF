@@ -39,8 +39,8 @@
 
     <body id="body" onload="iniciar()">
 		<div id="div_usuario" style="display: none;">
+				<img src="Logo.png" alt="Logo" width="150" height="120"><br>
 			Bem vindo, <b id="b_usuario"></b>
-
 			<span style="margin-left: 5em"><a href="/logout">Sair</a></span>
 		</div>
 
@@ -48,8 +48,13 @@
         
         <div style="margin-top: 2em">
 			<b>Médias:</b><br>
-			Temperatura: <b id="b_media_temperatura"></b> <br>
-			Umidade: <b id="b_media_umidade"></b> <br>
+			Média da Temperatura: <b id="b_media_temperatura"></b> <br>
+			Temperatura Máxima: <b id="b_max_temperatura"></b> <br>
+			Temperatura Mínima: <b id="b_min_temperatura"></b> <br>
+			Média da Umidade: <b id="b_media_umidade"></b> <br>
+			Umidade Máxima: <b id="b_max_umidade"></b> <br>
+			Umidade Mínima: <b id="b_min_umidade"></b> <br>
+			
         </div>
 
     </body>
@@ -72,8 +77,8 @@
 		chart: {
 			title: 'Temperatura e Umidade'
 		},
-		width: 1300,
-		height: 600,
+		width: 700,
+		height: 300,
 		series: {
 			0: {
 				axis: 'temperatura',
@@ -130,7 +135,11 @@
 			url: "/leitura/medias",
 			success: function (data) {
 				$('#b_media_temperatura').html(data.temperatura);
+				$('#b_max_temperatura').html(data.temperatura_max);
+				$('#b_min_temperatura').html(data.temperatura_min);
 				$('#b_media_umidade').html(data.umidade);
+				$('#b_max_umidade').html(data.umidade_max);
+				$('#b_min_umidade').html(data.umidade_min);
 			},
 			error: function (e) {
 				console.log("Erro:", e);

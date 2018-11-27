@@ -25,11 +25,12 @@
       	<link rel="stylesheet" href="assets/css/jquery-ui.css">
       	<link rel="stylesheet" href="assets/css/style.css">
    	</head>
-   	<body id="body">
-      	<div class="row">
-        	<div class="col-md-12 mx-auto">
-				<div class="col-md-6">
-					<form id="formLogin" method="post" onsubmit="autenticar(); return false;">
+   	<body id="body" class="bg-info" width='200'> 
+			<div class="container">
+			  <div class="card card-login mx-auto mt-5">
+				<div class="card-header">Login</div>
+				 <div class="card-body">
+					 <form id="formLogin" method="post" onsubmit="autenticar(); return false;">
 						<div class="form-group">
 							<label for="loginUsername">Login: </label>
 							<input type="text" class="form-control" id="login" name="login">

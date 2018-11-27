@@ -52,11 +52,15 @@ router.get('/ultimas', (req, res, next) => {
 // consulta que retorna as médias de temperatura e umidade
 router.get('/medias', (req, res, next) => {
 
-    Database.query(`SELECT avg(temperatura) as media_temp, avg(umidade) as media_umid FROM leitura`).then(resultados => {
+    Database.query(`SELECT avg(temperatura) as media_temp, max(temperatura) as max_temp, min(temperatura) as min_temp, avg(umidade) as media_umid, max(umidade) as max_humi, min(umidade) as min_humi FROM leitura`).then(resultados => {
         var linha = resultados.recordsets[0][0];
         var temperatura = linha.media_temp.toFixed(2);
+        var temperatura_max = linha.max_temp.toFixed(2);
+        var temperatura_min = linha.min_temp.toFixed(2);
         var umidade = linha.media_umid.toFixed(2);
-        res.json({temperatura:temperatura, umidade:umidade});
+        var umidade_max = linha.max_humi.toFixed(2);
+        var umidade_min = linha.min_humi.toFixed(2);
+        res.json({temperatura:temperatura , temperatura_max:temperatura_max , temperatura_min:temperatura_min , umidade:umidade , umidade_max:umidade_max , umidade_min :umidade_min});
     }).catch(error => {
         console.log(error);
         res.status(400).json({"error": `erro na consulta junto ao banco de dados ${error}`});
