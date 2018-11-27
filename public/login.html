@@ -24,15 +24,22 @@
       	<!-- CSS -->
       	<link rel="stylesheet" href="assets/css/jquery-ui.css">
       	<link rel="stylesheet" href="assets/css/style.css">
-   	</head>
-   	<body id="body" class="bg-info" width='200'> 
-			<div class="container">
-			  <div class="card card-login mx-auto mt-5">
-				<div class="card-header">Login</div>
+	   </head>
+	   <style>
+		   body{
+    background-image: url("fundo5.jpg");
+    
+	}
+	   </style>
+   	<body id="body" class="bg-dark"  width='200'> 
+		<center><img src="Logo.png" alt="Logo" width="250" height="220" style="margin-top: -2em"></center>
+		   	<div class="container">
+			  <div class="card card-login mx-auto mt-15" style="height: 9,5cm; width: 10cm; margin-bottom: 2em">
+				<div class="card-header" style= "background-color: black; color:white"><center>Login</center></div>
 				 <div class="card-body">
 					 <form id="formLogin" method="post" onsubmit="autenticar(); return false;">
 						<div class="form-group">
-							<label for="loginUsername">Login: </label>
+							<label for="loginUsername">Usuário: </label>
 							<input type="text" class="form-control" id="login" name="login">
 						</div>
 						<div class="form-group">
@@ -40,11 +47,13 @@
 							<input type="password" class="form-control" id="senha" name="senha">
 						</div>
 						<div>
-							<input type="submit" class="form-control btn btn-success" value="Entrar">
+							<input type="submit" class="form-control btn btn-dark" style= "background-color: rgb(53, 53, 53); 
+							color:white" value="Entrar">
 						</div>
 					</form>
-					<div class="text-right"><a href="/form.html">Cadastre-se</a></div>
-					<span id="span_mensagem" style="display: none">Usuario e/ou senha invalidos</span>
+					<br>					
+					<div class="text-right">Não possui uma conta?   <a href="/form.html" style="color:blue">Cadastre-se</a></div>
+					<center><span id="span_mensagem" style="display: none; color: red">Usuario e/ou senha invalidos</span></center>
 				</div>
          	</div>
       	</div>

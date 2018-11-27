@@ -23,31 +23,40 @@
       	<!-- CSS -->
       	<link rel="stylesheet" href="assets/css/jquery-ui.css">
       	<link rel="stylesheet" href="assets/css/style.css">
-   	</head>
-   	<body id="body" class="bg-info" width='200'> 
+	   </head>
+	   <style>
+	    body{
+    background-image: url("fundo5.jpg");
+    
+	}
+	 
+	 </style>
+   	<body id="body" class="bg-dark" width='200'>
+			<center><img src="Logo.png" alt="Logo" width="250" height="220" style="margin-top: -2em"></center>
 			<div class="container">
-			  <div class="card card-login mx-auto mt-5">
-				<div class="card-header">Cadastro de Usuário</div>
+			  <div class="card card-login mx-auto mt-15" style="height: 11cm; width: 10cm; margin-bottom: 2em">
+				<div class="card-header"style= "background-color: black; color:white"><center>Cadastro de Usuário</center></div>
 				 <div class="card-body">
 					 <form id="formCadastro" onsubmit="return cadastrar();">
                         <div class="form-group">
-                            <label for="inputName">Name: </label>
+                            <label for="inputName">Nome: </label>
                             <input type="text" class="form-control" id="inputNome" name="nome">
                         </div>
 						<div class="form-group">
-							<label for="inputUsername">Username: </label>
+							<label for="inputUsername">Usuário: </label>
 							<input type="text" class="form-control" id="inputUsername" name="usuario">
 						</div>
 						<div class="form-group">
-							<label for="inputPassword">Password: </label>
+							<label for="inputPassword">Senha: </label>
 							<input type="password" class="form-control" id="senha" name="senha">
 						</div>
 						<div>
-							<input type="submit" class="form-control btn btn-success" value="Enviar">
+							<input type="submit" class="form-control btn btn-dark" style= "background-color: rgb(53, 53, 53); 
+							color:white" value="Enviar">
                         </div>
                         <span id="span_mensagem" style="display: none;">Tente cadastrar novamente mais tarde.</span>
 					</form>
-					<div class="text-right">Já tem um cadastro? Faça <a href="/login.html">login</a></div>
+					<div class="text-right">Já tem um cadastro? Faça <a href="/login.html" style="color:blue">login</a></div>
 				</div>
          	</div>
       	</div>
