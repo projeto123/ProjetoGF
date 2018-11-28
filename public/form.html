@@ -1,6 +1,6 @@
 <html lang="pt-br; en" id="home">
    	<head>
-      	<title>Signup</title>
+      	<title>Cadastro</title>
      	<meta charset="UTF-8">
    	    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
       	<meta name="msapplication-TileColor" content="#ffffff">
@@ -26,7 +26,7 @@
 	   </head>
 	   <style>
 	    body{
-    background-image: url("imagens/fundo5.jpg");
+			background-image: url("imagens/fundo5.jpg");
     
 	}
 	 
@@ -54,7 +54,7 @@
 							<input type="submit" class="form-control btn btn-dark" style= "background-color: rgb(53, 53, 53); 
 							color:white" value="Enviar">
                         </div>
-                        <span id="span_mensagem" style="display: none;">Tente cadastrar novamente mais tarde.</span>
+                        <span id="span_mensagem" style="display: none;">Nome de usuário já cadastrado.</span>
 					</form>
 					<div class="text-right">Já tem um cadastro? Faça <a href="/login.html" style="color:blue">login</a></div>
 				</div>
@@ -67,8 +67,13 @@
 <script src="assets/js/jquery-3.3.1.min.js"></script>
 <script>
     function cadastrar() {
+		var nome = document.getElementById('inputNome').value;
+		var usuario = document.getElementById('inputUsername').value;
+		var senha = document.getElementById('senha').value;
+		if (nome.length < 6 || usuario.length < 6 || senha.length < 6) {
+			alert ('Use seis ou mais caracteres no Nome/Usuario/Senha.');
+		} else{
         var dados = $('#formCadastro').serialize();
-
         $.ajax({
             url: "/cadastro",
             type: 'POST',
@@ -84,6 +89,7 @@
             });
 
         return false;
-    }
+	}
+}
 
 </script>
