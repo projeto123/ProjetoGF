@@ -75,8 +75,9 @@ router.get('/medias', (req, res, next) => {
         var prim_quartilH = linha.primeiro_quartilh.toFixed(2);
         var terc_quartilH = linha.primeiro_quartilh.toFixed(2);
         res.json({temperatura:temperatura , medianaT:medianaT , temperatura_max:temperatura_max ,
-             temperatura_min:temperatura_min , prim_quartilT:prim_quartilT , terc_quartilT:terc_quartilT , umidade:umidade ,
-             , medianaH:medianaH , umidade_max:umidade_max , umidade_min , umidade_min});
+             temperatura_min:temperatura_min , prim_quartilT:prim_quartilT , terc_quartilT:terc_quartilT , umidade:umidade 
+             , medianaH:medianaH , umidade_max:umidade_max , umidade_min:umidade_min , prim_quartilH:prim_quartilH 
+             , terc_quartilH:terc_quartilH});
     }).catch(error => {
         console.log(error);
         res.status(400).json({"error": `erro na consulta junto ao banco de dados ${error}`});
